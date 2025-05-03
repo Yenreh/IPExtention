@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Address Viewer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <h1>IP Address Viewer</h1>
+    <div id="ipv4">
+      <span><strong>IPv4: </strong><span id="ipv4-address">Loading...</span></span>
+      <button id="copy-ipv4">
+        <img src="icons/copy-icon.svg" alt="Copy">
+      </button>
+    </div>
+    <div id="ipv6">
+      <span><strong>IPv6: </strong><span id="ipv6-address">Loading...</span></span>
+      <button id="copy-ipv6">
+        <img src="icons/copy-icon.svg" alt="Copy">
+      </button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
