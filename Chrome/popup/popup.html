@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Address Viewer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <svg
+            class="logo"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+              fill="currentColor"
+            />
+          </svg>
+          <h1 class="title">IP Address Viewer</h1>
+        </div>
+      </header>
+
+      <!-- Info text -->
+      <p class="info-text">Tus direcciones IP públicas</p>
+
+      <!-- IP Cards -->
+      <div class="ip-cards">
+        <!-- IPv4 Card -->
+        <div class="ip-card">
+          <div class="ip-header">
+            <span class="ip-label">IPv4</span>
+            <div class="status-indicator" id="ipv4-status">
+              <span class="status-dot loading"></span>
+              <span class="status-text">Cargando...</span>
+            </div>
+          </div>
+          <div class="ip-content">
+            <div class="ip-address" id="ipv4-address">
+              <span class="loading-text">Obteniendo dirección...</span>
+            </div>
+            <button class="copy-btn" id="copy-ipv4" title="Copiar IPv4" disabled>
+              <svg
+                class="copy-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="9"
+                  y="9"
+                  width="13"
+                  height="13"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              <span class="copy-text">Copiar</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- IPv6 Card -->
+        <div class="ip-card">
+          <div class="ip-header">
+            <span class="ip-label">IPv6</span>
+            <div class="status-indicator" id="ipv6-status">
+              <span class="status-dot loading"></span>
+              <span class="status-text">Cargando...</span>
+            </div>
+          </div>
+          <div class="ip-content">
+            <div class="ip-address" id="ipv6-address">
+              <span class="loading-text">Obteniendo dirección...</span>
+            </div>
+            <button class="copy-btn" id="copy-ipv6" title="Copiar IPv6" disabled>
+              <svg
+                class="copy-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="9"
+                  y="9"
+                  width="13"
+                  height="13"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+              <span class="copy-text">Copiar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="action-btn" id="refresh-btn" title="Actualizar direcciones">
+          <svg
+            class="action-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+              fill="currentColor"
+            />
+          </svg>
+          <span>Actualizar</span>
+        </button>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
