@@ -53,19 +53,25 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       updateStatus(ipv6Status, 'loading', 'Cargando...');
       
-      const response = await fetch('https://api64.ipify.org?format=json&ipv=6');
+      const response = await fetch('https://api64.ipify.org?format=json');
       
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
       
       const data = await response.json();
-      ipv6Address = data.ip;
       
-      ipv6Element.textContent = ipv6Address;
-      ipv6Element.classList.remove('loading-text', 'error-text');
-      updateStatus(ipv6Status, 'success', 'Conectado');
-      copyIpv6Button.disabled = false;
+      // Verificar si es una dirección IPv6 válida (contiene :)
+      if (data.ip && data.ip.includes(':')) {
+        ipv6Address = data.ip;
+        ipv6Element.textContent = ipv6Address;
+        ipv6Element.classList.remove('loading-text', 'error-text');
+        updateStatus(ipv6Status, 'success', 'Conectado');
+        copyIpv6Button.disabled = false;
+      } else {
+        // Si no contiene :, no es IPv6 o no está disponible
+        throw new Error('IPv6 no disponible');
+      }
       
     } catch (error) {
       console.error('Error fetching IPv6:', error);
