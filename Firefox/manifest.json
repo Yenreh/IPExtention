@@ -4,6 +4,14 @@
   "version": "1.1.0",
   "description": "Muestra tus direcciones IPv4 e IPv6 públicas con botones de copia rápida",
   "permissions": ["storage", "https://api64.ipify.org/*"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ipviewer@yenreh.dev",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
   "browser_action": {
     "default_popup": "popup/popup.html",
     "default_icon": {

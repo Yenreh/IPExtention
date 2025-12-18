@@ -26,24 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       updateStatus(ipv4Status, 'loading', 'Cargando...');
       
-      const response = await fetch('https://api64.ipify.org?format=json');
+      const response = await fetch('https://api.ipify.org?format=json');
       
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
       
       const data = await response.json();
-      ipv4Address = data.ip;
       
-      ipv4Element.textContent = ipv4Address;
-      ipv4Element.classList.remove('loading-text', 'error-text');
-      updateStatus(ipv4Status, 'success', 'Conectado');
-      copyIpv4Button.disabled = false;
+      // Verificar que sea una dirección IPv4 válida (sin :)
+      if (data.ip && !data.ip.includes(':')) {
+        ipv4Address = data.ip;
+        ipv4Element.textContent = ipv4Address;
+        ipv4Element.classList.remove('loading-text', 'error-text');
+        updateStatus(ipv4Status, 'success', 'Conectado');
+        copyIpv4Button.disabled = false;
+      } else {
+        throw new Error('No se pudo obtener IPv4');
+      }
       
     } catch (error) {
       console.error('Error fetching IPv4:', error);
-      ipv4Element.innerHTML = '<span class="error-text">Error al obtener IPv4</span>';
-      updateStatus(ipv4Status, 'error', 'Error');
+      ipv4Element.innerHTML = '<span class="error-text">No disponible</span>';
+      updateStatus(ipv4Status, 'error', 'No disponible');
       copyIpv4Button.disabled = true;
     }
   }
@@ -69,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStatus(ipv6Status, 'success', 'Conectado');
         copyIpv6Button.disabled = false;
       } else {
-        // Si no contiene :, no es IPv6 o no está disponible
         throw new Error('IPv6 no disponible');
       }
       
