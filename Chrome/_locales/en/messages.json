@@ -1,0 +1,44 @@
+{
+  "extName": {
+    "message": "IP Address Viewer"
+  },
+  "extDescription": {
+    "message": "Shows your public IPv4 and IPv6 addresses with quick copy buttons"
+  },
+  "infoText": {
+    "message": "Your public IP addresses"
+  },
+  "statusLoading": {
+    "message": "Loading..."
+  },
+  "statusConnected": {
+    "message": "Connected"
+  },
+  "statusUnavailable": {
+    "message": "Not available"
+  },
+  "obtainingAddress": {
+    "message": "Fetching address..."
+  },
+  "copyLabel": {
+    "message": "Copy"
+  },
+  "copiedLabel": {
+    "message": "Copied!"
+  },
+  "copyIpv4Title": {
+    "message": "Copy IPv4"
+  },
+  "copyIpv6Title": {
+    "message": "Copy IPv6"
+  },
+  "refreshLabel": {
+    "message": "Refresh"
+  },
+  "refreshTitle": {
+    "message": "Refresh addresses"
+  },
+  "copyErrorAlert": {
+    "message": "Error copying to clipboard"
+  }
+}

@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "IP Address Viewer",
+  "name": "__MSG_extName__",
   "version": "1.1.0",
-  "description": "Muestra tus direcciones IPv4 e IPv6 públicas con botones de copia rápida",
+  "description": "__MSG_extDescription__",
+  "default_locale": "es",
   "permissions": ["storage", "https://api64.ipify.org/*"],
   "browser_specific_settings": {
     "gecko": {

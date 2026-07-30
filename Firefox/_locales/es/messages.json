@@ -1,0 +1,44 @@
+{
+  "extName": {
+    "message": "IP Address Viewer"
+  },
+  "extDescription": {
+    "message": "Muestra tus direcciones IPv4 e IPv6 públicas con botones de copia rápida"
+  },
+  "infoText": {
+    "message": "Tus direcciones IP públicas"
+  },
+  "statusLoading": {
+    "message": "Cargando..."
+  },
+  "statusConnected": {
+    "message": "Conectado"
+  },
+  "statusUnavailable": {
+    "message": "No disponible"
+  },
+  "obtainingAddress": {
+    "message": "Obteniendo dirección..."
+  },
+  "copyLabel": {
+    "message": "Copiar"
+  },
+  "copiedLabel": {
+    "message": "Copiado!"
+  },
+  "copyIpv4Title": {
+    "message": "Copiar IPv4"
+  },
+  "copyIpv6Title": {
+    "message": "Copiar IPv6"
+  },
+  "refreshLabel": {
+    "message": "Actualizar"
+  },
+  "refreshTitle": {
+    "message": "Actualizar direcciones"
+  },
+  "copyErrorAlert": {
+    "message": "Error al copiar al portapapeles"
+  }
+}

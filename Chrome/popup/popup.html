@@ -27,7 +27,7 @@
       </header>
 
       <!-- Info text -->
-      <p class="info-text">Tus direcciones IP públicas</p>
+      <p class="info-text" data-i18n="infoText">Tus direcciones IP públicas</p>
 
       <!-- IP Cards -->
       <div class="ip-cards">
@@ -37,14 +37,14 @@
             <span class="ip-label">IPv4</span>
             <div class="status-indicator" id="ipv4-status">
               <span class="status-dot loading"></span>
-              <span class="status-text">Cargando...</span>
+              <span class="status-text" data-i18n="statusLoading">Cargando...</span>
             </div>
           </div>
           <div class="ip-content">
             <div class="ip-address" id="ipv4-address">
-              <span class="loading-text">Obteniendo dirección...</span>
+              <span class="loading-text" data-i18n="obtainingAddress">Obteniendo dirección...</span>
             </div>
-            <button class="copy-btn" id="copy-ipv4" title="Copiar IPv4" disabled>
+            <button class="copy-btn" id="copy-ipv4" data-i18n-title="copyIpv4Title" title="Copiar IPv4" disabled>
               <svg
                 class="copy-icon"
                 viewBox="0 0 24 24"
@@ -66,7 +66,7 @@
                   stroke-width="2"
                 />
               </svg>
-              <span class="copy-text">Copiar</span>
+              <span class="copy-text" data-i18n="copyLabel">Copiar</span>
             </button>
           </div>
         </div>
@@ -77,14 +77,14 @@
             <span class="ip-label">IPv6</span>
             <div class="status-indicator" id="ipv6-status">
               <span class="status-dot loading"></span>
-              <span class="status-text">Cargando...</span>
+              <span class="status-text" data-i18n="statusLoading">Cargando...</span>
             </div>
           </div>
           <div class="ip-content">
             <div class="ip-address" id="ipv6-address">
-              <span class="loading-text">Obteniendo dirección...</span>
+              <span class="loading-text" data-i18n="obtainingAddress">Obteniendo dirección...</span>
             </div>
-            <button class="copy-btn" id="copy-ipv6" title="Copiar IPv6" disabled>
+            <button class="copy-btn" id="copy-ipv6" data-i18n-title="copyIpv6Title" title="Copiar IPv6" disabled>
               <svg
                 class="copy-icon"
                 viewBox="0 0 24 24"
@@ -106,7 +106,7 @@
                   stroke-width="2"
                 />
               </svg>
-              <span class="copy-text">Copiar</span>
+              <span class="copy-text" data-i18n="copyLabel">Copiar</span>
             </button>
           </div>
         </div>
@@ -114,7 +114,7 @@
 
       <!-- Actions -->
       <div class="actions">
-        <button class="action-btn" id="refresh-btn" title="Actualizar direcciones">
+        <button class="action-btn" id="refresh-btn" data-i18n-title="refreshTitle" title="Actualizar direcciones">
           <svg
             class="action-icon"
             viewBox="0 0 24 24"
@@ -126,7 +126,7 @@
               fill="currentColor"
             />
           </svg>
-          <span>Actualizar</span>
+          <span data-i18n="refreshLabel">Actualizar</span>
         </button>
       </div>
     </div>

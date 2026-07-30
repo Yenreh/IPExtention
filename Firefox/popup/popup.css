@@ -15,6 +15,25 @@
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #8657d6;
+    --primary-dark: #6227b0;
+    --primary-light: #3a2a52;
+    --text-primary: #f0f0f0;
+    --text-secondary: #b0b0b0;
+    --background: #1e1e1e;
+    --surface: #2a2a2a;
+    --border-color: #404040;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .action-btn:hover,
+  .copy-btn:hover:not(:disabled) {
+    color: #ffffff;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
