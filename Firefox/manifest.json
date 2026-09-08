@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "__MSG_extDescription__",
   "default_locale": "es",
-  "permissions": ["storage", "https://api64.ipify.org/*"],
+  "permissions": ["https://api.ipify.org/*", "https://api64.ipify.org/*"],
   "browser_specific_settings": {
     "gecko": {
       "id": "ipviewer@yenreh.dev",
