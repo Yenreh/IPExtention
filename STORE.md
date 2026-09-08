@@ -31,6 +31,11 @@ to copy each one.
 Query the ipify.org API to obtain the public IPv4 and IPv6 addresses. No other
 host is contacted and no user data is sent.
 
+**storage**
+Not used. The permission was declared in version 1.2.1 and earlier but the
+extension never stored anything, and it was removed in version 1.2.2. Upload
+version 1.2.2 or later and this justification is no longer requested.
+
 **Remote code**
 No, I am not using remote code. All HTML, CSS and JavaScript is included in the
 package.
