@@ -1,8 +1,8 @@
 /* IP Address Viewer - Popup Styles */
 
 :root {
-  --primary-color: #6227b0;
-  --primary-dark: #511fa2;
+  --primary-color: #512092;
+  --primary-dark: #401980;
   --primary-light: #c7bee7;
   --success-color: #4caf50;
   --warning-color: #ff9800;
@@ -13,24 +13,21 @@
   --surface: #ffffff;
   --border-color: #e0e0e0;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --primary-shadow: rgba(81, 32, 146, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #8657d6;
-    --primary-dark: #6227b0;
-    --primary-light: #3a2a52;
+    --primary-color: #7c4dcc;
+    --primary-dark: #512092;
+    --primary-light: #33294d;
     --text-primary: #f0f0f0;
     --text-secondary: #b0b0b0;
     --background: #1e1e1e;
     --surface: #2a2a2a;
     --border-color: #404040;
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  }
-
-  .action-btn:hover,
-  .copy-btn:hover:not(:disabled) {
-    color: #ffffff;
+    --primary-shadow: rgba(124, 77, 204, 0.3);
   }
 }
 
@@ -41,7 +38,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, sans-serif;
   font-size: 13px;
   background: var(--background);
   color: var(--text-primary);
@@ -190,14 +187,14 @@ body {
 .loading-text {
   font-size: 13px;
   color: var(--text-secondary);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, sans-serif;
   font-weight: 400;
 }
 
 .error-text {
   font-size: 13px;
   color: var(--danger-color);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, sans-serif;
   font-weight: 400;
 }
 
@@ -208,27 +205,24 @@ body {
   gap: 6px;
   padding: 8px 12px;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: var(--surface);
-  color: var(--primary-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .copy-btn:hover:not(:disabled) {
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-light);
   border-color: var(--primary-color);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(98, 39, 176, 0.3);
+  color: var(--primary-color);
 }
 
 .copy-btn:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: none;
+  transform: scale(0.97);
 }
 
 .copy-btn:disabled {
@@ -249,46 +243,43 @@ body {
 
 /* Actions */
 .actions {
-  padding: 16px;
-  padding-top: 0;
   display: flex;
+  justify-content: center;
   gap: 8px;
-  background: var(--background);
+  padding: 16px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border-color);
 }
 
 .action-btn {
-  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  gap: 4px;
   padding: 10px 16px;
+  background: transparent;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: var(--surface);
-  color: var(--text-primary);
-  font-size: 13px;
-  font-weight: 500;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  font-size: 11px;
+  min-width: 80px;
 }
 
 .action-btn:hover {
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-light);
   border-color: var(--primary-color);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(98, 39, 176, 0.3);
+  color: var(--primary-color);
 }
 
 .action-btn:active {
-  transform: translateY(0);
-  box-shadow: none;
+  transform: scale(0.97);
 }
 
 .action-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Animations */
@@ -309,4 +300,34 @@ body {
 
 .ip-card:nth-child(2) {
   animation-delay: 0.1s;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 12px 6px;
+  background: var(--surface);
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer-link svg {
+  width: 12px;
+  height: 12px;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  color: var(--primary-color);
 }
