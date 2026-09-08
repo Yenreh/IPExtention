@@ -6,6 +6,14 @@ function t(key) {
   return i18n.getMessage(key) || key;
 }
 
+// Mostrar un mensaje de estado dentro de un contenedor
+function setMessage(element, className, text) {
+  const span = document.createElement('span');
+  span.className = className;
+  span.textContent = text;
+  element.replaceChildren(span);
+}
+
 function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     el.textContent = t(el.dataset.i18n);
@@ -63,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
     } catch {
-      ipv4Element.innerHTML = `<span class="error-text">${t('statusUnavailable')}</span>`;
+      setMessage(ipv4Element, 'error-text', t('statusUnavailable'));
       updateStatus(ipv4Status, 'error', t('statusUnavailable'));
       copyIpv4Button.disabled = true;
     }
@@ -94,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
     } catch {
-      ipv6Element.innerHTML = `<span class="error-text">${t('statusUnavailable')}</span>`;
+      setMessage(ipv6Element, 'error-text', t('statusUnavailable'));
       updateStatus(ipv6Status, 'error', t('statusUnavailable'));
       copyIpv6Button.disabled = true;
     }
@@ -140,8 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     copyIpv4Button.disabled = true;
     copyIpv6Button.disabled = true;
 
-    ipv4Element.innerHTML = `<span class="loading-text">${t('obtainingAddress')}</span>`;
-    ipv6Element.innerHTML = `<span class="loading-text">${t('obtainingAddress')}</span>`;
+    setMessage(ipv4Element, 'loading-text', t('obtainingAddress'));
+    setMessage(ipv6Element, 'loading-text', t('obtainingAddress'));
 
     fetchIPv4();
     fetchIPv6();
