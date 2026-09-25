@@ -15,7 +15,7 @@ IP Address Viewer shows your public IP addresses in a single click:
 - Copy each address to the clipboard with one click
 - Refresh button to fetch the current addresses
 - Real-time status indicator per address
-- English and Spanish interface, light and dark mode
+- English and Spanish interface, light, dark or automatic theme
 
 The addresses are obtained from the free ipify.org API. The extension does not
 collect, store or transmit any personal data.
