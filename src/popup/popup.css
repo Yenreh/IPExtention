@@ -1,0 +1,133 @@
+/* IP Address Viewer - Popup layout (tokens and shared parts in base.css) */
+
+/* IP cards */
+.ip-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 16px 18px 18px;
+}
+
+.ip-card {
+  padding-top: 8px;
+  border-top: 3px solid var(--accent);
+}
+
+.ip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ip-label {
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Status badge: the dot state sets the badge color */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 7px;
+  border: 1px solid currentColor;
+  color: var(--muted);
+  font: 500 10.5px/18px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-indicator:has(.status-dot.loading) {
+  color: var(--warn);
+}
+
+.status-indicator:has(.status-dot.success) {
+  color: var(--ok);
+}
+
+.status-indicator:has(.status-dot.error) {
+  color: var(--crit);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+}
+
+.status-dot.loading {
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Address and copy button */
+.ip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ip-address {
+  flex: 1;
+  min-width: 0;
+  font: 500 19px/1.3 var(--mono);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
+}
+
+#ipv6-address {
+  font-size: 15px;
+}
+
+.loading-text,
+.error-text {
+  font: 400 13px var(--sans);
+  color: var(--muted);
+}
+
+.error-text {
+  color: var(--crit);
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border-color: var(--rule);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.copy-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.copy-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.copy-btn.copied,
+.copy-btn.copied:hover {
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.action-icon {
+  width: 14px;
+  height: 14px;
+}

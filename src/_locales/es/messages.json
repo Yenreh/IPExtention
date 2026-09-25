@@ -40,5 +40,17 @@
   },
   "copyErrorAlert": {
     "message": "Error al copiar al portapapeles"
+  },
+  "themeAuto": {
+    "message": "Auto"
+  },
+  "themeLight": {
+    "message": "Claro"
+  },
+  "themeDark": {
+    "message": "Oscuro"
+  },
+  "themeTitle": {
+    "message": "Tema: auto sigue al navegador. Haz clic para alternar entre auto, claro y oscuro"
   }
 }
